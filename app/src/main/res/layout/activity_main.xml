@@ -9,9 +9,10 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/introTV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight = "1"
+        android:layout_weight="1"
         android:text="Welcome to my Counting App!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -21,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_weight = "1"
         android:onClick="onClickFirstButton"
-        android:text="First Button" />
+        android:text="First Button + 1" />
 
     <Button
         android:id="@+id/secondButton"
@@ -29,7 +30,7 @@
         android:layout_height="0dp"
         android:layout_weight = "1"
         android:onClick="onClickSecondButton"
-        android:text="Second Button" />
+        android:text="Second Button - 1" />
 
     <ImageView
         android:id="@+id/goldfishIV"
