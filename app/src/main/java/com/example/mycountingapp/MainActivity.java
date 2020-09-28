@@ -2,6 +2,7 @@ package com.example.mycountingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,4 +33,10 @@ public class MainActivity extends AppCompatActivity
     {
         Toast.makeText(this, "This is the second button!", Toast.LENGTH_SHORT).show();
     }
-}
+    public void onClickGoToScreen2(View view)
+    {
+        Intent intent = new Intent(this, Screen2.class);
+        startActivity(intent);
+    }
+
+}//end class
