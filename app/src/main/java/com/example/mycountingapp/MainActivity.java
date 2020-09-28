@@ -32,15 +32,14 @@ public class MainActivity extends AppCompatActivity
     public void onClickFirstButton(View view)
     {
         num1++;
-        TextView introTV = (TextView) findViewById(R.id.introTV);
-        introTV.setText("You now have " + num1 + " fishies");
+        updateIntroTV();
         //Toast.makeText(this, "This is the first button!", Toast.LENGTH_SHORT).show();
     }
+
     public void onClickSecondButton(View view)
     {
         num1--;
-        TextView introTV = (TextView) findViewById(R.id.introTV);
-        introTV.setText("You now have " + num1 + " fishies");
+        updateIntroTV();
         //Toast.makeText(this, "This is the second button!", Toast.LENGTH_SHORT).show();
     }
     public void onClickGoToScreen2(View view)
@@ -49,20 +48,34 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    /*
     public void openDialogue(View view)
     {
+        //creating it programatically
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Confirm reset count");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i)
             {
-              //Toast.makeText(this, "Reset confirmed",Toast.LENGTH_LONG).show();
+              Toast.makeText(MainActivity.this, "Reset confirmed",Toast.LENGTH_LONG).show();
+              num1 = 0;
+              updateIntroTV();
             }
         });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                //nothing here but having listener allows box to close
+            }
+        });
+        //actually calls it to be made and shown
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+     }
 
-     */
-
+    private void updateIntroTV() {
+        TextView introTV = (TextView) findViewById(R.id.introTV);
+        introTV.setText("You now have " + num1 + " fishies");
+    }
 
 }//end class
