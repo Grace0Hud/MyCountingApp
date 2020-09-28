@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity
     }
     public void onClickSecondButton(View view)
     {
+        num1--;
+        TextView introTV = (TextView) findViewById(R.id.introTV);
+        introTV.setText("You now have " + num1 + " fishies");
         //Toast.makeText(this, "This is the second button!", Toast.LENGTH_SHORT).show();
     }
     public void onClickGoToScreen2(View view)
